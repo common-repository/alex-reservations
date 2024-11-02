@@ -41,6 +41,10 @@ class WidgetMessage extends SettingSimpleGrouped
 				'label' => __eva('Message booking Confirmed'),
 				'slug' => 'message_booked'
 			],
+			[
+				'label' => __eva('Message booking Denied'),
+				'slug' => 'message_denied'
+			],
 		];
 	}
 
@@ -84,7 +88,25 @@ class WidgetMessage extends SettingSimpleGrouped
 					'template' => $this->get_template_message_for('message_booked'),
 					'tags' => $this->tags(),
 				]
-			]
+			],
+			'message_denied' => [
+				[
+					'attribute' => 'message_denied',
+					'stacked' => true,
+					'name' => __eva('Message for Booking Confirmed'),
+					'component' => 'group-email-languages-field',
+					'subfields' => ['content'],
+					'previewButton' => false,
+					'value' => $this->valueWithLanguagesFor('message_denied'),
+					'helpText' => __eva('This message will appear in the widget after the user has submitted the request.'),
+					'help' => [
+						'content' => __eva('Message content.'),
+						//'content' => __eva('Message content. You can use tags.'). ' - <strong>{booking_details} {booking_details_no_duration}</strong>'
+					],
+					'template' => $this->get_template_message_for('message_denied'),
+					'tags' => $this->tags(),
+				]
+			],
 		];
 	}
 
@@ -107,6 +129,31 @@ class WidgetMessage extends SettingSimpleGrouped
 		return $result;
 	}
 
+	public static function default_messages() {
+		return [
+			'message_booked' => ['content' => 'Thanks,
+your booking request has been confirmed.
+
+You will receive updates in the email address you have provided.
+
+{booking_details}'],
+
+			'message_pending' => ['content' => 'Thanks,
+your booking request is waiting to be confirmed.
+
+You will receive updates in the email address you have provided.
+
+{booking_details}'],
+
+			'message_denied' => ['content' => 'We are sorry,
+we are unable to accept your booking request at this time.
+
+If you have any questions, please contact us directly.
+
+{booking_details}']
+		];
+	}
+
 	protected function load_templates_messages()
 	{
 		if ($this->templates) return;
@@ -116,7 +163,11 @@ class WidgetMessage extends SettingSimpleGrouped
 		$templates = [];
 		foreach ($languages as $lang => $label)
 		{
-			$file = ALEXR_DIR_TEMPLATES_WIDGET_MESSAGES.$lang.'.json';
+			$default_messages = static::default_messages();
+
+			$templates[$lang] = $this->replaceByTemplateFiles($lang, $default_messages);
+
+			/*$file = ALEXR_DIR_TEMPLATES_WIDGET_MESSAGES.$lang.'.json';
 
 			if (file_exists($file)){
 				$json = file_get_contents($file);
@@ -125,7 +176,7 @@ class WidgetMessage extends SettingSimpleGrouped
 				$templates[$lang] = $this->replaceByTemplateFiles($lang, json_decode($json, true));
 			} else {
 				$templates[$lang] = [];
-			}
+			}*/
 		}
 
 		// Convert from object to array

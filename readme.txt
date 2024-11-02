@@ -4,7 +4,7 @@ Donate link:       https://alexreservations.com
 Tags:              restaurant reservations, tables, appointments, booking, scheduling
 Requires at least: 5.1
 Tested up to:      6.6.2
-Stable tag:        2.0.0
+Stable tag:        2.0.1
 Requires PHP:      7.4
 License:           GPLv2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
@@ -216,6 +216,16 @@ The PRO version has a custom login page that can be used for accessing the resta
 This version has fixed some small issues and added new features
 
 == Changelog ==
+###2.0.1 ###
+* NEW: Users will be redirected to Google Reviews when they rate more than X stars
+* NEW: Enhanced customer tag rules - bookings can now be set to 'Denied' or 'Pending' based on customer tags.
+* NEW: Added permission to control access to the pending bookings list
+* NEW: Added a new setting to disable the popup when marking a status as 'Finished'
+* NEW: Added a setting to automatically fill in the reservation form with user data when logged in.
+* Fixed issue not counting bookings with status 'Seated' in the reports
+* Fixed issue with 'Other available dates' styling
+* Fixed issue with rule for pending bookings
+* Fixed issue with message 'This user has no restaurant assigned'
 
 ###2.0.0 ###
 * NEW: Introduced recurring bookings feature

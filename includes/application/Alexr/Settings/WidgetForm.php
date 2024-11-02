@@ -131,8 +131,8 @@ class WidgetForm extends SettingCustomized
 
 	public function defaultValue(){
 		return [
-			'name' => 'Custom wiget',
-			'desc' => 'This widget can be customized',
+			'name' => 'Widget',
+			'desc' => '',
 			'form_fields' => self::defaultFields(),
 			'form_config' => self::defaultConfig()
 		];

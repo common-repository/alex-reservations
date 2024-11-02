@@ -4,6 +4,7 @@ return [
 	'panels' => [
 		'loginpage'   => __eva('Login page'),
 		'dashboard' => __eva('Dashboard'),
+		'widget' => __eva('Widget'),
 		'authentication' => __eva('Authentication'),
 		//'mobile' => __eva('Mobile'),
 		'saas' => __eva('SAAS')
@@ -148,6 +149,18 @@ return [
 				'help'      => __eva('Leave it empty for no link'),
 				'type'      => 'text',
 				'placeholder' => 'https://'
+			],
+			[
+				'key'       => 'dashboard_disable_popup_finished',
+				'label'     => __eva('Disable popup asking for review when marked as finished'),
+				'type'      => 'toggle',
+			],
+		],
+		'widget' => [
+			[
+				'key'       => 'widget_autofill_reservation_form',
+				'label'     => __eva('Auto-fill user data in the reservation form if logged-in'),
+				'type'      => 'toggle',
 			],
 		],
 		'authentication' => [

@@ -516,6 +516,9 @@ abstract class Model implements ToJsonSerialize {
 		return $this->toArray();
 	}
 
+	// Para recurring bookings
+	//------------------------------------
+
 	public function replicate(array $except = [])
 	{
 		$attributes = $this->getAttributes();
@@ -544,5 +547,56 @@ abstract class Model implements ToJsonSerialize {
 		$this->attributes = $attributes;
 
 		return $this;
+	}
+
+
+	// Nuevo metodo delete
+	//-------------------------------------------
+	public function delete()
+	{
+		if (!$this->exists) {
+			return false;
+		}
+
+		$this->fireModelEvent('deleting');
+
+		$deleted = $this->performDelete();
+
+		if ($deleted) {
+			$this->exists = false;
+			$this->fireModelEvent('deleted');
+		}
+
+		return $deleted;
+	}
+
+	protected function performDelete()
+	{
+		$key = $this->getKeyName();
+
+		$deleted = Query::table(static::$table_name)
+		                ->where($key, $this->getAttribute($key))
+		                ->delete();
+
+		if ($deleted) {
+			$this->syncOriginal();
+
+			// Clear the attributes
+			$this->attributes = [];
+			$this->original = [];
+
+			// Delete associated meta if exists
+			if (static::$table_meta) {
+				$this->deleteMeta();
+			}
+		}
+
+		return $deleted;
+	}
+
+	protected function deleteMeta()
+	{
+		// Implement meta deletion logic here
+		// This will depend on how your meta data is stored
 	}
 }

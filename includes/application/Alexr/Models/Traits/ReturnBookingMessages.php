@@ -65,6 +65,12 @@ trait ReturnBookingMessages {
 		}
 
 		$message = base64_decode($message_b64);
+
+		if (empty($message)) {
+			$default_messages = WidgetMessage::default_messages();
+			$message = isset($default_messages[$template]) ? $default_messages[$template]['content'] : '{booking_details}';
+		}
+
 		$message = $this->parseMessageTags($message);
 
 		return $message;
@@ -78,5 +84,10 @@ trait ReturnBookingMessages {
 	public function messageBooked($lang = 'en')
 	{
 		return $this->getMessageTemplate('message_booked', $lang);
+	}
+
+	public function messageDenied($lang = 'en')
+	{
+		return $this->getMessageTemplate('message_denied', $lang);
 	}
 }

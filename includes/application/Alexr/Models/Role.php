@@ -69,6 +69,7 @@ class Role extends Model
 			'vertical_menu' => ['label' => __eva('Vertical Menu'), 'description' => ''],
 			'wp_back_button' => ['label' => __eva('WP back button'), 'description' => ''],
 			'bookings' => [ 'label' => __eva('Bookings'), 'description' => '' ],
+			'bookings_pending' => [ 'label' => __eva('Bookings pending'), 'description' => '' ],
 			'customers' => ['label' => __eva('Customers'), 'description' => '' ],
 			'floor_plan' => ['label' => __eva('Floor Plan'), 'description' => '' ],
 			'reporting' => ['label' => __eva('Statistics'), 'description' => '' ],
@@ -107,7 +108,8 @@ class Role extends Model
 			'view_customers' => __eva('Customers'),
 			'view_metrics' => __eva('Statistics'),
 			'view_editor' => __eva('Editor'),
-			'view_settings' => __eva('Settings')
+			'view_settings' => __eva('Settings'),
+
 		];
 	}
 
@@ -118,6 +120,7 @@ class Role extends Model
 				'vertical_menu' => ['view_list' => true, 'view_floor_plan' => true, 'view_calendar' => true, 'view_customers' => true, 'view_metrics' => true, 'view_editor' => true, 'view_settings' => true],
 				'wp_back_button' => ['enable' => false],
 				'bookings' => ['edit' => true, 'create' => true, 'export' => true, 'columns' => true],
+				'bookings_pending' => ['view' => true],
 				'customers' => ['edit' => true, 'create' => true, 'delete' => true, 'export' => true, 'import' => true, 'columns' => true],
 				'close_days' => ['edit' => true],
 				'close_slots' => ['edit' => true],
@@ -141,6 +144,7 @@ class Role extends Model
 				'vertical_menu' => ['view_list' => true, 'view_floor_plan' => true, 'view_calendar' => true, 'view_customers' => true, 'view_metrics' => true, 'view_editor' => true, 'view_settings' => true],
 				'wp_back_button' => ['enable' => false],
 				'bookings' => ['edit' => true, 'create' => true, 'export' => true, 'columns' => false],
+				'bookings_pending' => ['view' => true],
 				'customers' => ['edit' => true, 'create' => true, 'delete' => false, 'export' => true, 'import' => true, 'columns' => false],
 				'close_days' => ['edit' => false],
 				'close_slots' => ['edit' => false],
@@ -164,6 +168,7 @@ class Role extends Model
 				'vertical_menu' => ['view_list' => true, 'view_floor_plan' => true, 'view_calendar' => true, 'view_customers' => true, 'view_metrics' => true, 'view_editor' => true, 'view_settings' => true],
 				'wp_back_button' => ['enable' => false],
 				'bookings' => ['edit' => false, 'create' => false, 'export' => false, 'columns' => false],
+				'bookings_pending' => ['view' => false],
 				'customers' => ['edit' => false, 'create' => false, 'delete' => false, 'export' => false, 'import' => false, 'columns' => false],
 				'close_days' => ['edit' => false],
 				'close_slots' => ['edit' => false],

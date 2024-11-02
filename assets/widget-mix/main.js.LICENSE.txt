@@ -1,23 +1,4 @@
 /*!
- * PhotoSphereViewer 5.3.0
- * @copyright 2014-2015 Jérémy Heleine
- * @copyright 2023 Damien "Mistic" Sorel
- * @licence MIT (https://opensource.org/licenses/MIT)
- */
-
-/*!
- * PhotoSphereViewer.GalleryPlugin 5.3.0
- * @copyright 2023 Damien "Mistic" Sorel
- * @licence MIT (https://opensource.org/licenses/MIT)
- */
-
-/*!
- * PhotoSphereViewer.MarkersPlugin 5.3.0
- * @copyright 2023 Damien "Mistic" Sorel
- * @licence MIT (https://opensource.org/licenses/MIT)
- */
-
-/*!
  * The buffer module from node.js, for the browser.
  *
  * @author   Feross Aboukhadijeh <http://feross.org>
@@ -27,12 +8,6 @@
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
 
 /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
-
-/**
- * @license
- * Copyright 2010-2023 Three.js Authors
- * SPDX-License-Identifier: MIT
- */
 
 /**
  * @license

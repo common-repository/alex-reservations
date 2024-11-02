@@ -96,6 +96,7 @@ class AppConfigurator
 			'required_free_version' => $free_version_required,
 			'dashboard_menu_message' => alexr_get_setting('dashboard_menu_message'),
 			'dashboard_menu_message_link' => alexr_get_setting('dashboard_menu_message_link'),
+			'dashboard_disable_popup_finished' => alexr_get_setting('dashboard_disable_popup_finished'),
 
 			'logo_custom_image_url' => alexr_get_setting('logo_custom_image_url'),
 			'first_page_to_load' => alexr_get_setting('first_page_to_show'),

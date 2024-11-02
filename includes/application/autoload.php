@@ -127,6 +127,7 @@ require_once ALEXR_PLUGIN_DIR_APP . 'Alexr/Settings/EmailReminder.php';
 require_once ALEXR_PLUGIN_DIR_APP . 'Alexr/Settings/SmsReminder.php';
 require_once ALEXR_PLUGIN_DIR_APP . 'Alexr/Settings/Payment.php';
 require_once ALEXR_PLUGIN_DIR_APP . 'Alexr/Settings/SocialChannel.php';
+require_once ALEXR_PLUGIN_DIR_APP . 'Alexr/Settings/GoogleReview.php';
 
 require_once ALEXR_PLUGIN_DIR_APP . 'Alexr/Settings/Interfaces/FilterSlots.php';
 //require_once ALEXR_PLUGIN_DIR_APP . 'Alexr/Settings/Filters/FilterByBlockSlots.php';

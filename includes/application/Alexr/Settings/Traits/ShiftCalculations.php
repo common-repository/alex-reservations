@@ -1174,7 +1174,11 @@ trait ShiftCalculations {
 			return $status;
 		}
 
-		$customer = Customer::where('email', $email)->first();
+		// Hay que buscar el usuario dentro del restaurante actual
+		$customer = Customer::where('restaurant_id', $this->restaurant_id)
+		                    ->where('email', $email)
+		                    ->first();
+
 		$customer_tags_id = $customer->tags->pluck('id');
 		if (!$customer_tags_id || empty($customer_tags_id)) {
 			return $status;
@@ -1182,6 +1186,10 @@ trait ShiftCalculations {
 
 		foreach($tags_id as $tag_id) {
 			if (in_array($tag_id, $customer_tags_id)) {
+				$status = $this->rule_customers_status;
+				if ($status == BookingStatus::DENIED) {
+					return BookingStatus::DENIED;
+				}
 				return BookingStatus::PENDING;
 			}
 		}

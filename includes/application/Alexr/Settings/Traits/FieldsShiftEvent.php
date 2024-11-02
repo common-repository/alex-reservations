@@ -813,6 +813,7 @@ Trait FieldsShiftEvent {
 					'rule_seats_enable' => $this->rule_seats_enable,
 					'rule_slots_enable' => $this->rule_slots_enable,
 					'rule_customers_enable' => $this->rule_customers_enable,
+					'rule_customers_status' => $this->rule_customers_status,
 					'rule_exclude_days_enable' => $this->rule_exclude_days_enable,
 					'rule_exclude_tables_enable' => $this->rule_exclude_tables_enable,
 

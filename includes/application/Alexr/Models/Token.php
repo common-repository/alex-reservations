@@ -51,7 +51,7 @@ class Token extends Model {
 		$token = self::create([
 			'user_id' => $user_id,
 			'expire_date' => evavel_date_now()->addDays(365)
-		])	;
+		]);
 
 		return $token->token;
 	}
@@ -71,7 +71,7 @@ class Token extends Model {
 		return null;
 	}
 
-	public static function delete($auth_token)
+	public static function remove($auth_token)
 	{
 		self::where('token', $auth_token)->delete();
 	}

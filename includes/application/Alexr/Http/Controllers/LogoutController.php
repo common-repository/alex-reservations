@@ -13,7 +13,7 @@ class LogoutController extends Controller
 		evavel_logout();
 
 		if (isset($_GET['token'])) {
-			Token::delete(sanitize_text_field($_GET['token']));
+			Token::remove(sanitize_text_field($_GET['token']));
 		}
 
 		return $this->response(['success' => true, 'redirect' => evavel_site_url().ALEXR_DASHBOARD]);

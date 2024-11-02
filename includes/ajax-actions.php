@@ -1021,10 +1021,11 @@ class ALEXR_Ajax_Actions {
 
 		// This is used only when the admin change the status from the front view
 		// so the message returned is not displayed anywhere
+		// Tambien puede ser que se haya denegado la reserva al cliente
 		else if ($booking->status == BookingStatus::DENIED)
 		{
 			$booking->sendEmailDenied($lang);
-			$message = '';
+			$message = $booking->messageDenied($lang);
 			if ($booking->agree_receive_sms == 1) {
 				$booking->sendSmsDenied($lang);
 			}

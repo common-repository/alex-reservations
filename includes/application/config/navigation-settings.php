@@ -83,6 +83,7 @@ return [
 				'payments-settings', 'payments-shifts', 'payments-frontend',
 				'payments-dashboard', 'payments-emails', 'payments-store-cards']],
 			['label' => 'Social Channels', 'settingName' => 'social_channels', 'help_online' => 'social-channels'],
+			['label' => 'Google Review', 'settingName' => 'google_review'],
 			//['label' => 'Google Reserve', 'settingName' => 'google_reserve']
 		]
 	],

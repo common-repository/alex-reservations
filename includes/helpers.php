@@ -6,9 +6,20 @@ function alexr_get_translations($use_all = false) {
 }
 
 function alexr_get_config() {
+
+	$autofill = alexr_get_setting('widget_autofill_reservation_form');
+	$current_user = wp_get_current_user();
+
 	return [
 		'ajaxurl' => evavel_ajaxurl(),
-		'languages' => evavel_languages_as_options()
+		'languages' => evavel_languages_as_options(),
+		'widget_autofill_reservation_form' => ($autofill == 'true' || $autofill === true) ? 'true' : 'false',
+		'is_logged_in' => is_user_logged_in() ? 'true' : 'false',
+		'current_user' => [
+			'first_name' => $current_user->first_name,
+			'last_name' => $current_user->last_name,
+			'email' => $current_user->user_email
+		]
 	];
 }
 

@@ -68,6 +68,18 @@ trait WhereHasTrait
 		return $this;
 	}
 
+	public function orWhereRaw($sql, $bindings = [], $boolean = 'or')
+	{
+		$this->bindings['where'][] = [
+			'type' => 'raw',
+			'sql' => $sql,
+			'bindings' => $bindings,
+			'boolean' => $boolean
+		];
+
+		return $this;
+	}
+
 	// Estos métodos deben estar implementados en la clase que use este trait
 	abstract protected function validateTableName($tableName);
 	abstract public function buildSql();

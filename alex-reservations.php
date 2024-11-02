@@ -3,8 +3,8 @@
  * Plugin Name: Alex Reservations
  * Plugin URI:  https://alexreservations.com
  * Description: Smart Restaurant Booking
- * Version:     2.0.0
- * Release:     100
+ * Version:     2.0.1
+ * Release:     101
  * Requires PHP: 7.4
  * Author:      AlexReservations
  * Author URI:  http://alexreservations.com
@@ -16,7 +16,7 @@
  * @link    https://alexreservations.com
  *
  * @package ALEXR
- * @version 2.0.0
+ * @version 2.0.1
  */
 
 /**
@@ -182,11 +182,11 @@ if ( !class_exists('Alex_Reservations') ) :
 
 			// Version
 			if ( ! defined( 'ALEXR_VERSION' ) ) {
-				define( 'ALEXR_VERSION', '2.0.0' );
+				define( 'ALEXR_VERSION', '2.0.1' );
 			}
 
 			if ( ! defined( 'ALEXR_RELEASE' ) ) {
-				define( 'ALEXR_RELEASE', '100' );
+				define( 'ALEXR_RELEASE', '101' );
 			}
 
 			if ( ! defined( 'ALEXR_APP_NAME' ) ) {

@@ -5,7 +5,7 @@ use Alexr\Models\Customer;
 function alexr_remove_holded_bookings($restaurantId)
 {
 	//$limit_date = \Carbon\Carbon::now()->addMinutes(-10)->format('Y-m-d H:i:s');
-	$limit_date = evavel_date_now()->addMinutes(-15)->format('Y-m-d H:i:s');
+	$limit_date = evavel_date_now()->addMinutes(-10)->format('Y-m-d H:i:s');
 
 	// La reserva esta em modo Selected sin email
 	// No se porque a veces falla

@@ -24,7 +24,7 @@ class Query
 	protected static $count_queries = 0;
 	protected $debug_ray_this_sql_only = false;
 
-	protected static $use_cache = false;
+	protected static $use_cache = true;
 	protected static $cached = [];
 
 	public $connection;
@@ -489,7 +489,7 @@ class Query
 	public function delete()
 	{
 		$this->delete = true;
-		$this->get();
+		return $this->get();
 	}
 
 	public function deleteModel()
